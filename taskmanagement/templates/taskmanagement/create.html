@@ -1,0 +1,18 @@
+<H1>CREATE</H1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    Name:
+    <br>
+    <input type="text" name="name" required>
+    <br>
+    Description:
+    <br>
+    <textarea name="description" cols="30" rows="10" required></textarea>
+    <br>
+    Status:
+    <br>
+    <input type="checkbox" name="status" value="1">
+    <br>
+    <button>Submit</button>
+</form>

@@ -1,0 +1,27 @@
+<H1>UPDATE</H1>
+
+<form action="/taskmanagement/edit/{{ task.id }}" method="post">
+    {% csrf_token %}
+    Name: 
+    <br>
+    <input type="text" name="name" value="{{ task.name }}">
+    <br>
+    Description: 
+    <br>
+    <textarea name="description" id="" cols="30" rows="10">{{ task.description }}</textarea>
+    <br>
+    Status: <input type="checkbox" {% if task.status %} checked {% endif %} name="status" value="1">
+    <br>
+    Assigned to: {{ task.assigned_to_user_id }}
+    <br>
+    Date Created: {{ task.date_created }}
+    <br>
+    Last Updated Date: {{ task.last_updated_date }}
+    <br>
+    Created By: {{ task.created_by_user_id }}
+    <br>
+    Last Updated By: {{ task.last_updated_by_user_id }}
+    <br>
+    <button type="button" onclick="window.location.href = '/taskmanagement/'">Back</button>
+    <button>Update</button>
+</form>
